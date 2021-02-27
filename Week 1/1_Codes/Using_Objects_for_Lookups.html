@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Using Objects for Lookups</title>
+    </head>
+    <script>
+        function phoneticLookup(val) {
+          var result = "";
+        
+          // Only change code below this line
+          var lookup = {
+             "alpha": "Adams",
+             "bravo": "Boston",
+             "charlie": "Chicago",
+             "delta": "Denver",
+             "echo": "Easy",
+             "foxtrot": "Frank"
+          }
+          result = lookup[val]
+
+          return console.log(result);
+        }
+
+        phoneticLookup("charlie");
+    </script>
+    <body></body>
+</html>
