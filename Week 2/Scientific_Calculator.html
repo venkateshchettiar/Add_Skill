@@ -1,0 +1,144 @@
+<html>
+    <title>Calculator</title>
+<head>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background: border-box;
+            font-size: 25px;
+            font-family: monospace;
+        }
+        .calculator{
+            border: 4px solid blueviolet;
+            width: 400px;
+            border-radius: 10px;
+        }
+        .input{
+            padding: 10px;
+            text-align-last: right;
+            background: ivory;
+        }
+        .button{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2px;
+            margin: 5px;
+            text-align: center;
+            justify-content: center;
+            background: rgb(240, 248, 255);            
+        }
+
+        .button:hover{
+            color: orange;
+        }
+        .but:hover{
+            cursor: pointer;
+            background-color: orange;
+        }
+
+        .but{
+            padding: 5px;
+            margin: 3px;
+
+        }
+        
+        .inp{
+            font-size: 40px;
+            width: 100%;
+            color: black;
+        }
+
+
+    </style>
+
+    
+
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="input" id="new">
+            <input class = "inp" type="text" name="result" placeholder="0"/>
+        </div>
+        
+        <div class="button">
+            <button class = "but" onclick="log()">log</button>
+            <button class = "but" onclick="Sqrt()">&Sqrt;</button>
+            <button class = "but" onclick="Square()">x&sup2;</button>
+            <button class = "but" onclick="Back()"><--</button>
+
+            <button class = "but"  onclick="Sin()">sin</button>
+            <button class = "but"  onclick="Cos()">cos</button>
+            <button class = "but"  onclick="Tan()">tan</button>
+            <button class = "but"  onclick="Clear()">C</button>
+    
+            <button class = "but" value="7" onclick="number(value)">7</button>
+            <button class = "but" value="8" onclick="number(value)">8</button>
+            <button class = "but" value="9" onclick="number(value)">9</button>
+            <button class = "but" value="/" onclick="number(value)">/</button>
+    
+            <button class = "but" value="4" onclick="number(value)">4</button>
+            <button class = "but" value="5" onclick="number(value)">5</button>
+            <button class = "but" value="6" onclick="number(value)">6</button>
+            <button class = "but" value="*" onclick="number(value)">*</button>
+    
+            <button class = "but" value="1" onclick="number(value)">1</button>
+            <button class = "but" value="2" onclick="number(value)">2</button>
+            <button class = "but" value="3" onclick="number(value)">3</button>
+            <button class = "but" value="-" onclick="number(value)">-</button>
+            
+            <button class = "but" value="0" onclick="number(value)">0</button>
+            <button class = "but" value="." onclick="number(value)">.</button>
+            <button class = "but" value="=" onclick="Equal()">=</button>
+            <button class = "but" value="+" onclick="number(value)">+</button> 
+        </div>
+        
+    </div>
+
+    <script type="text/javascript">
+        function number(value) {
+            document.getElementById("new").innerText += value;
+        }
+
+        function Equal() {
+            document.getElementById("new").innerText = eval(document.getElementById("new").innerText);
+        }
+
+        function Clear() {
+            document.getElementById('new').innerText = "";
+        }
+
+        function Sin() {
+            document.getElementById("new").innerText = Math.sin(document.getElementById("new").innerText)
+        }
+
+        function Cos() {
+            document.getElementById("new").innerText = Math.cos(document.getElementById("new").innerText)
+        }
+
+        function Tan() {
+            document.getElementById("new").innerText = Math.tan(document.getElementById("new").innerText)
+        }
+
+        function log() {
+            document.getElementById("new").innerText = Math.log(document.getElementById("new").innerText)
+        }
+
+        function Sqrt() {
+            document.getElementById("new").innerText = Math.sqrt(document.getElementById("new").innerText)
+        }
+
+        function Square() {
+            document.getElementById("new").innerText = eval(document.getElementById("new").innerText*document.getElementById("new").innerText)
+        }
+
+        function Back() {
+            document.getElementById("new").innerText = document.getElementById("new").innerText.substring(0, document.getElementById("new").innerText.length - 1)
+        }
+
+    </script>
+</body>
+    
+</html>
